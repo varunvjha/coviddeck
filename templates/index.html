@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Coviddeck</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>CovidDeck</title>
+    <link rel="stylesheet" type="text/css" href=" {{ url_for('static', filename='styles.css') }} ">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -13,139 +13,132 @@
     <div class="wrapper">
         <div class="nav">
             <div class="logo">
-                <h4>Coviddeck.</h4>
+                <h4>CovidDeck</h4>
             </div>
             <div class="links">
-                <a href="#covid updates" class="mainlink">Corona Updates</a>
-                <a href="#assessment">Assessment</a>
+                <a href="{{ url_for('tracker') }}">Corona Updates</a>
+                <a href="{{ url_for('assessment') }}">Assessment</a>
                 <a href="#precautions">Precautions</a>
                 <a href="#footer">Contact</a>
             </div>
         </div>
-
-        <!-- LANDING PAGE -->
         <section class="white-section" id="assessment">
-        <div class="landing">
-            <div class="landingText" data-aos="fade-up" data-aos-duration="1000">
-                <h1>Stay In.<span style="color:#e0501b;font-size: 4vw"> Stay Safe.</span> </h1>
-                <h3>Lets all work together to put an end to this pandemic. <br> Help stop the spread.</h3>
-                <div class="btn">
-                    <a href="#">Assess Yourself</a>
+            <div class="landing">
+                <div class="landingText" data-aos="fade-up" data-aos-duration="1000">
+                    <h1>Stay In.<span style="color:#e0501b;font-size: 4vw"> Stay Safe.</span> </h1>
+                    <h3>Lets all work together to put an end to this pandemic. <br> Help stop the spread.</h3>
+                    <div class="btn">
+                        <a href="{{ url_for('assessment') }}">Assess Yourself</a>
+                    </div>
+                </div>
+                <div class="landingImage" data-aos="fade-down" data-aos-duration="2000">
+                    <img src="{{ url_for('static', filename='img/bg.png') }}" alt="">
                 </div>
             </div>
-            <div class="landingImage" data-aos="fade-down" data-aos-duration="2000">
-                <img src="img/bg.png" alt="">
-            </div>
-        </div>
-    </section>
-        <!-- ABOUT SECTION -->
+        </section>
         <section class="white-section" id="about">
-        <div class="about">
-            <div class="aboutText" data-aos="fade-up" data-aos-duration="1000">
-                <h1>Why is it important that <br> <span style="color:#2f8be0;font-size:3vw">You Stay Home?</span> </h1>
-                <img src="img/doctor-woman-400px.png" alt="">
+            <div class="about">
+                <div class="aboutText" data-aos="fade-up" data-aos-duration="1000">
+                    <h1>Why is it important that <br> <span style="color:#2f8be0;font-size:3vw">You Stay Home?</span>
+                    </h1>
+                    <img src="{{ url_for('static', filename='img/doctor-woman-400px.png') }}" alt="">
+                </div>
+                <div class="aboutList" data-aos="fade-left" data-aos-duration="1000">
+                    <ol>
+                        <li>
+                            <span>01</span>
+                            <p>Covid-19, which is now a fast growing global pandemic. The number of confirmed cases
+                                worldwide has exceeded 55 million due to rapid spreading of the virus.</p>
+                        </li>
+                        <li>
+                            <span>02</span>
+                            <p>Covid-19, spreads very easily, much easier than many other regular illnesses we deal with
+                                on a regular basis. That's what makes it so dangerous.</p>
+                        </li>
+                        <li>
+                            <span>03</span>
+                            <p>The best course of action is to stay at home prevent the spread of the disease as well as
+                                hospitals getting overwhelmed with patients who simply shoudn't be there.</p>
+                        </li>
+                        <li>
+                            <span>04</span>
+                            <p>As of today, there is no know cure and no approved vaccine for Covid-19</p>
+                        </li>
+
+                    </ol>
+                </div>
             </div>
-            <div class="aboutList" data-aos="fade-left" data-aos-duration="1000">
-                <ol>
-                    <li> 
-                        <span>01</span>
-                         <p>Covid-19, which is now a fast growing global pandemic. The number of confirmed cases worldwide has exceeded 55 million due to rapid spreading of the virus.</p>
-                    </li>
-                    <li> 
-                        <span>02</span>
-                         <p>Covid-19, spreads very easily, much easier than many other regular illnesses we deal with on a regular basis. That's what makes it so dangerous.</p>
-                    </li>
-                    <li> 
-                        <span>03</span>
-                         <p>The best course of action is to stay at home prevent the spread of the disease as well as hospitals getting overwhelmed with patients who simply shoudn't be there.</p>
-                    </li>
-                    <li> 
-                        <span>04</span>
-                         <p>As of today, there is no know cure and no approved vaccine for Covid-19</p>
-                    </li>
-
-                </ol>
-            </div>
-        </div>
-    </section>
-
-
-        <!-- BANNER--->
+        </section>
         <section class="yellow-section" id="covid updates">
-        <div class="banner">
-            <div class="bannerText" data-aos="fade-right" data-aos-duration="1000">
-                <h1>Covid-19 India Statistics<br> <span style="font-size:1.6vw;font-weight:normal"  class="bannerInnerText">
-                    Stay Updated, Take Precautions and Beat this Pandemic!
-                </span> </h1>
-                <a href="#"><img src="https://image.flaticon.com/icons/png/512/98/98696.png" alt=""></a>
-                
-            </div>
-            <div class="bannerImg" data-aos="fade-up" data-aos-duration="1000">
-                <img src="img/MobileApp.png" alt="">
-            </div>
-        </div>
-    </section>
+            <div class="banner">
+                <div class="bannerText" data-aos="fade-right" data-aos-duration="1000">
+                    <h1>Covid-19 India Statistics<br> <span style="font-size:1.6vw;font-weight:normal"
+                            class="bannerInnerText">
+                            Stay Updated, Take Precautions and Beat this Pandemic!
+                        </span> </h1>
+                    <a href="{{ url_for('tracker') }}"><img src="https://image.flaticon.com/icons/png/512/98/98696.png" alt=""></a>
 
-
-        <!-- INFO SECTION -->
+                </div>
+                <div class="bannerImg" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="{{ url_for('static', filename='img/MobileApp.png') }}" alt="">
+                </div>
+            </div>
+        </section>
         <section class="white-section" id="precautions">
-        <div class="infoSection">
-            <div class="infoHeader" data-aos="fade-up" data-aos-duration="1000">
-                <br>
-                <br>
-                <h1>Precautions for a  <span style="color:#e0501b">Healthy Tomorrow.</span> </h1>
-            </div>
-            <div class="infoCards">
-                <div class="card one" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="img/hand-wash.svg" class="cardoneImg" alt="" data-aos="fade-up" data-aos-duration="1100">
-                    <div class="cardbgone"></div>
-                    <div class="cardContent">
-                        <h2>Wash your Hands</h2>
-                        <p>Washing hands can prevent the spread of respiratory and diarrheal infections from one person to the next.</p>
-                       
+            <div class="infoSection">
+                <div class="infoHeader" data-aos="fade-up" data-aos-duration="1000">
+                    <br>
+                    <br>
+                    <h1>Precautions for a <span style="color:#e0501b">Healthy Tomorrow.</span> </h1>
+                </div>
+                <div class="infoCards">
+                    <div class="card one" data-aos="fade-up" data-aos-duration="1000">
+                        <img src="{{ url_for('static', filename='img/hand-wash.svg') }}" class="cardoneImg" alt="" data-aos="fade-up"
+                            data-aos-duration="1100">
+                        <div class="cardbgone"></div>
+                        <div class="cardContent">
+                            <h2>Wash your Hands</h2>
+                            <p>Washing hands can prevent the spread of respiratory and diarrheal infections from one
+                                person to the next.</p>
+                        </div>
+                    </div>
+                    <div class="card two" data-aos="fade-up" data-aos-duration="1300">
+                        <img src="{{ url_for('static', filename='img/mask.svg') }}" class="cardtwoImg" alt="" data-aos="fade-up" data-aos-duration="1200">
+                        <div class="cardbgtwo"></div>
+                        <div class="cardContent">
+                            <h2>Wear Mask</h2>
+                            <p>Masks are recommended as a simple barrier to help prevent respiratory droplets from
+                                traveling into the air.</p>
+                        </div>
+                    </div>
+                    <div class="card three" data-aos="fade-up" data-aos-duration="1600">
+                        <img src="{{ url_for('static', filename='img/nose rub.svg') }}" class="cardthreeImg" alt="" data-aos="fade-up"
+                            data-aos-duration="1300">
+                        <div class="cardbgone"></div>
+                        <div class="cardContent">
+                            <h2>Don't use Palm for Rubbing your nose</h2>
+                            <p>We touch our eyes and noses all day long and it increases the spreading of Coronavirus.
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="card two" data-aos="fade-up" data-aos-duration="1300">
-                    <img src="img/mask.svg" class="cardtwoImg" alt="" data-aos="fade-up" data-aos-duration="1200">
-                    <div class="cardbgtwo"></div>
-                    <div class="cardContent">
-                        <h2>Wear Mask</h2>
-                        <p>Masks are recommended as a simple barrier to help prevent respiratory droplets from traveling into the air.</p>
-                        
-                    </div>
-                </div>
-                <div class="card three" data-aos="fade-up" data-aos-duration="1600">
-                    <img src="img/nose rub.svg" class="cardthreeImg" alt="" data-aos="fade-up" data-aos-duration="1300">
-                    <div class="cardbgone"></div>
-                    <div class="cardContent">
-                        <h2>Don't use Palm for Rubbing your nose</h2>
-                        <p>We touch our eyes and noses all day long and it increases the spreading of Coronavirus.</p>
-                        
-                    </div>
+            </div>
+        </section>
+        <section class="yellow-section" id="footer">
+            <div class="footer">
+                <h2>CovidDeck</h2>
+                <div class="footerlinks">
+                    <a href="{{ url_for('tracker') }}">Corona Updates</a>
+                    <a href="{{ url_for('assessment') }}">Assessment</a>
+                    <a href="#precautions">Precautions</a>
+                    <a href="#footer">Contact</a>
                 </div>
             </div>
-        </div>
-
-    </section>
-        <!-- BANNER AND FOOTER -->
-
-        <section class="yellow-section" id="footer">    
-
-        <div class="footer">
-            <h2>Coviddeck.</h2>
-            <div class="footerlinks">
-                <a href="#covid updaes" class="mainlink">Corona Updates</a>
-                <a href="#assessment">Assessment</a>
-                <a href="#precautions">Precautions</a>
-                <a href="#footer">Contact</a>
-            </div>
-        </div>
-    </section>
+        </section>
     </div>
-
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-            AOS.init();
+        AOS.init();
     </script>
 </body>
 </html>

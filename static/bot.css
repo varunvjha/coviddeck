@@ -1,94 +1,175 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-  html,
-  body {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
+html,
+body {
+  margin-top: 10vh;
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
-  .form-control:active,
-  .form-control:focus,
-  .form-control.active,
-  .form-control:active:focus {
-    background-image: none;
-    outline: 0;
+.form-control:active,
+.form-control:focus,
+.form-control.active,
+.form-control:active:focus {
+  background-image: none;
+  outline: 0;
 
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 
+.chatBot {
+  width: 50%;
+  height: 50vh;
+  border: 2px solid #222;
+  margin: auto;
+  padding: 15px;
+  border-radius: 15px;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 600px) {
   .chatBot {
-    width: 50%;
-    height: 50vh;
-    border: 2px solid #222;
-    margin: auto;
-    padding: 15px;
-    border-radius: 15px;
-    overflow-x: hidden;
+    width: 90%;
+    height: 90vh;
+  }
+}
+
+.chatBot .qna {
+  background-color: #f0f0f7;
+  padding: 15px;
+  border-radius: 15px;
+  position: relative;
+  margin: 35px 0;
+}
+
+.chatBot .qna .bot {
+  margin-bottom: 10px;
+}
+
+.chatBot .qna .answers {
+  position: absolute;
+  right: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.chatBot .qna .answers .options {
+  min-width: 80px;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 40px;
+  outline: none;
+  background-color: #2875e0;
+  border: 0;
+  color: #fff;
+}
+
+label {
+  font-size: 1.25em;
+}
+
+.startBtn {
+  outline: none !important;
+  padding: 5px 10px;
+  border: 0;
+  outline: none;
+  width: 200px;
+  height: 40px;
+  background-color: #2875e0;
+  color: #f0f0f7;
+  border-radius: 15px;
+  margin: -40px -100px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+}
+
+.footer {
+  background-color: #ffda77;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100vw;
+}
+
+.footerlinks a {
+  margin: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.footerlinks .mainlink {
+  color: #e0501b;
+}
+
+.nav {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px 0 25px;
+  background-color: #fff;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.10);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.nav .links a {
+  margin-right: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.nav .links .mainlink {
+  color: #e0501b;
+}
+
+.nav h4 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .nav {
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    height: auto;
+    overflow-y: hidden;
   }
 
-  @media screen and (max-width: 600px) {
-    .chatBot {
-      width: 90%;
-      height: 90vh;
-    }
+  .nav h4 {
+    font-size: 6vw;
+    margin-top: 10px;
+    margin-bottom: 14px;
   }
 
-  .chatBot .qna {
-    background-color: #f0f0f7;
-    padding: 15px;
-    border-radius: 15px;
-    position: relative;
-    margin: 35px 0;
+  .nav .links a {
+    margin-right: 25px;
+    font-size: 12px;
+    font-weight: 600;
   }
-
-  .chatBot .qna .bot {
-    margin-bottom: 10px;
-  }
-
-  .chatBot .qna .answers {
-    position: absolute;
-    right: 15px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .chatBot .qna .answers .options {
-    min-width: 80px;
-    padding: 5px 10px;
-    margin: 5px;
-    border-radius: 40px;
-    outline: none;
-    background-color: #2875e0;
-    border: 0;
-    color: #fff;
-  }
-
-  label {
-    font-size: 1.25em;
-  }
-
-  .startBtn {
-    outline: none !important;
-    padding: 5px 10px;
-    border: 0;
-    outline: none;
-    width: 200px;
-    height: 40px;
-    background-color: #2875e0;
-    color: #f0f0f7;
-    border-radius: 15px;
-    margin: -40px -100px;
-    position: relative;
-    top: 50%;
-    left: 50%;
-  }
+}
