@@ -8,6 +8,10 @@ model = joblib.load("models/random_forest.joblib")
 def home():
     return render_template('bot.html')
 
+@app.route('/tracker')
+def tracker():
+    return render_template('tracker.html')
+
 @app.route('/assessmentComplete', methods=['GET', 'POST'])
 def assessmentComplete():
     jsonResponse = request.get_json(force=True)

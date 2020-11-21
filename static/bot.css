@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  html,
+  body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .form-control:active,
+  .form-control:focus,
+  .form-control.active,
+  .form-control:active:focus {
+    background-image: none;
+    outline: 0;
+
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .chatBot {
+    width: 50%;
+    height: 50vh;
+    border: 2px solid #222;
+    margin: auto;
+    padding: 15px;
+    border-radius: 15px;
+    overflow-x: hidden;
+  }
+
+  @media screen and (max-width: 600px) {
+    .chatBot {
+      width: 90%;
+      height: 90vh;
+    }
+  }
+
+  .chatBot .qna {
+    background-color: #f0f0f7;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    margin: 35px 0;
+  }
+
+  .chatBot .qna .bot {
+    margin-bottom: 10px;
+  }
+
+  .chatBot .qna .answers {
+    position: absolute;
+    right: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .chatBot .qna .answers .options {
+    min-width: 80px;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 40px;
+    outline: none;
+    background-color: #2875e0;
+    border: 0;
+    color: #fff;
+  }
+
+  label {
+    font-size: 1.25em;
+  }
+
+  .startBtn {
+    outline: none !important;
+    padding: 5px 10px;
+    border: 0;
+    outline: none;
+    width: 200px;
+    height: 40px;
+    background-color: #2875e0;
+    color: #f0f0f7;
+    border-radius: 15px;
+    margin: -40px -100px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+  }
