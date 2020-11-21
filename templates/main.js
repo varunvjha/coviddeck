@@ -30,23 +30,23 @@ $(document).ready(function () {
     var chart = new Chart(myChart, {
       type: "bar",
       data: {
-        labels: states,
+        labels: states.slice(0, 15),
         datasets: [
           {
             label: "Confirmed Cases",
-            data: confirmed,
+            data: confirmed.slice(0, 15),
             backgroundColor: "#f1c40f",
             minBarLength: 1,
           },
           {
             label: "Recovered",
-            data: recovered,
+            data: recovered.slice(0, 15),
             backgroundColor: "#2ecc71",
             minBarLength: 1,
           },
           {
             label: "Deceased",
-            data: deaths,
+            data: deaths.slice(0, 15),
             backgroundColor: "#e74c3c",
             minBarLength: 1,
           },
